@@ -9,3 +9,4 @@
 
 - This is being used to try new things and continue to be comfortable with Python
 - This was started because I was in between jobs and didn't want to be stagnant in my development
+ 
