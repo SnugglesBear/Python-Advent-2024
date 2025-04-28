@@ -12,10 +12,8 @@ def extract_mul_calls(text):
     for match in re.finditer(pattern, text):
         if match.group(1):  # do()
             status = True
-            print("something was true")
         elif match.group(2):  # dont()
             status = False
-            print("something was false")
         elif match.group(3):  # mul(a,b)
             if status:
 
