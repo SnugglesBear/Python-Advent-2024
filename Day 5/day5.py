@@ -39,6 +39,27 @@ def create_nodes(link_lines):
 
     return node_map
 
+def simplify_instructions(updates):
+    simplified = [list(map(int, item.split(','))) for item in updates]
+    return simplified
+
+def check_instructions(page_rules, updates):
+    count = 0
+    for line in updates:
+        count = count + check_line(line, page_rules)
+
+    return count
+
+
+def check_line(line, page_rules):
+    count = 0
+
+    for index in line:
+        if index > 0:
+            try: 
+                node = page_rules(line[index])
+
+    
 
 def main():
     lines = read_input_lines("Python-Advent-2024/Day 5/input.txt")
@@ -46,6 +67,7 @@ def main():
     divider = lines.index('')
     rules = lines[:divider]
     updates = lines[divider + 1:]
+    updates = simplify_instructions(updates)
 
     page_rules = create_nodes(rules)
 
